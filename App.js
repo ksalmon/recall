@@ -14,7 +14,17 @@ export default class App extends React.Component {
     // const { user } = await firebase.auth().signInAnonymously();
     // console.warn('User -> ', user.toJSON());
 
-    // await firebase.analytics().logEvent('foo', { bar: '123'});
+    await firebase.analytics().logEvent('foo', { bar: '123'});
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        console.log("Hello")
+      } else {
+        // No user is signed in.
+        console.log("Nope")
+
+      }
+    });
   }
 
   render() {

@@ -1,4 +1,4 @@
-package com.invertase.rnfirebasestarter;
+package com.raygunn.recall;
 
 import android.support.multidex.MultiDexApplication;
 
