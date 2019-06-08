@@ -4,19 +4,19 @@ import {
       createAppContainer
     } from 'react-navigation';
 
-import LoadingScene from './src/scenes/Loading'
-import LoginScene from './src/scenes/Login'
+import Loading from './scenes/Loading'
+import Login from './scenes/Login'
 
 // create our app's navigation stack
 const RootStack = createStackNavigator(
   {
-    Loading: { screen: LoadingScene },
-    Login: { screen: LoginScene }
+    Loading: Loading,
+    Login: Login
   },
   {
     initialRouteName: "Loading"
   }
 )
 
-const App = createAppContainer(RootStack);
-export default App;
+const Routes = createAppContainer(RootStack);
+export default Routes;

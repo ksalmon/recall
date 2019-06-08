@@ -2,6 +2,7 @@
 platform :ios, '9.0'
 
 target 'Recall' do
+  rn_path = '../node_modules/react-native'
   # Pods for Recall
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
@@ -25,6 +26,34 @@ target 'Recall' do
   pod 'Fabric', '~> 1.9.0'
   pod 'Crashlytics', '~> 3.12.0'
 
+  pod 'yoga', path: "#{rn_path}/ReactCommon/yoga/yoga.podspec"
+  pod 'DoubleConversion', :podspec => "#{rn_path}/third-party-podspecs/DoubleConversion.podspec"
+  pod 'Folly', :podspec => "#{rn_path}/third-party-podspecs/Folly.podspec"
+  pod 'glog', :podspec => "#{rn_path}/third-party-podspecs/GLog.podspec"
+  pod 'React', path: rn_path, subspecs: [
+    'Core',
+    'CxxBridge',
+    'RCTAnimation',
+    'RCTActionSheet',
+    'RCTImage',
+    'RCTLinkingIOS',
+    'RCTNetwork',
+    'RCTSettings',
+    'RCTText',
+    'RCTVibration',
+    'RCTWebSocket',
+    'RCTPushNotification',
+    'RCTCameraRoll',
+    'RCTSettings',
+    'RCTBlob',
+    'RCTGeolocation',
+    'DevSupport'
+  ]
+
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
+
+
 end
 
 target 'Recall-tvOS' do
@@ -39,3 +68,5 @@ target 'Recall-tvOS' do
   end
 
 end
+
+
