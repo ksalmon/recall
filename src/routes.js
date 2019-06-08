@@ -1,14 +1,17 @@
 import React from 'react';
 import { createStackNavigator } from 'react-navigation';
 
-import Loading from './scenes/Loading'
-import Login from './scenes/Login'
+import LoadingScene from './scenes/Loading'
+import LoginScene from './scenes/Login'
+import SignUpScreen from './scenes/SignUp'
+import HomeScreen from './scenes/Home'
 
-// create our app's navigation stack
 export const Routes = createStackNavigator(
   {
-    Loading: Loading,
-    Login: Login
+    Loading: { screen: LoadingScene },
+    Login: { screen: LoginScene },
+    SignUp: { screen: SignUpScreen },
+    Home: { screen: HomeScreen },
   },
   {
     initialRouteName: "Loading"
