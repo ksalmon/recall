@@ -1,14 +1,11 @@
 import React from 'react';
-import {
-      createStackNavigator,
-      createAppContainer
-    } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 
 import Loading from './scenes/Loading'
 import Login from './scenes/Login'
 
 // create our app's navigation stack
-const RootStack = createStackNavigator(
+export const Routes = createStackNavigator(
   {
     Loading: Loading,
     Login: Login
@@ -17,6 +14,3 @@ const RootStack = createStackNavigator(
     initialRouteName: "Loading"
   }
 )
-
-const Routes = createAppContainer(RootStack);
-export default Routes;
